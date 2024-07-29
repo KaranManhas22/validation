@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="./sk.html" onsubmit="return validation()">
+        <h4>
+            Enter the Name
+        </h4>
+       
+        <input type="text" placeholder="Enter the name" id="idName">
+        <br>
+        <h4>
+            Enter the Roll no.
+        </h4>
+
+        <input type="number" placeholder="Enter the roll no." id="idRoll">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="message"></p>
+    <script>
+        function validation() {
+            var studentName = document.getElementById('idName').value
+            var studentRollno = document.getElementById('idRoll').value
+            if (studentName != "" && studentRollno != "") {
+                document.getElementById('message').innerHTML = ""
+                return true
+            }
+            else {
+                document.getElementById('message').innerHTML = "Please fill all the mandatory details"
+                return false
+            }
+        }
+    </script>
+</body>
+
+</html>
